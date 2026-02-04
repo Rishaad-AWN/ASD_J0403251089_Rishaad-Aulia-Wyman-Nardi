@@ -155,6 +155,7 @@ def main():
       update_nilai(buka_data)
     elif pilihan == "4":
       simpan_data_mahasiswa(nama_file, buka_data)
+      print("Data Baru Tersimpan!")
     elif pilihan == "5":
       print('Selesai')
       break
