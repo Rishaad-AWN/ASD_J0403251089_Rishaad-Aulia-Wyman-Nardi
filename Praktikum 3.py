@@ -1,16 +1,90 @@
-class Node:
+# Latihan	1: Implementasikan fungsi untuk menghapus node dengan nilai tertentu.
+
+class NodeSingle:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class SingleLinkedList:
+    def __init__(self):
+        self.head = None
+    
+    def insert_at_end(self, data):
+        new_node = NodeSingle(data)
+        if not self.head:
+            self.head = new_node
+            return
+        temp = self.head
+        while temp.next:
+            temp = temp.next
+        temp.next = new_node
+        print(f"Data {data} berhasil ditambahkan!")
+    
+    def display(self):
+        if not self.head:
+            print("\nList kosong!")
+            return
+        print("\nIsi Single linked list:")
+        temp = self.head
+        while temp:
+            print(temp.data, end=" -> ")
+            temp = temp.next
+        print("null")
+    
+    def delete_node(self, key):
+        temp = self.head
+        
+        if not temp:
+            print("List kosong! Tidak ada yang bisa dihapus.")
+            return
+        
+        if temp and temp.data == key:
+            self.head = temp.next
+            temp = None
+            print(f"Data {key} berhasil dihapus!")
+            return
+        
+        prev = None
+        while temp and temp.data != key:
+            prev = temp
+            temp = temp.next
+        
+        if temp is None:
+            print(f"Data {key} tidak ditemukan!")
+            return
+        
+        prev.next = temp.next
+        temp = None
+        print(f"Data {key} berhasil dihapus!")
+
+ll = SingleLinkedList()
+ll.insert_at_end(3)
+ll.insert_at_end(5)
+ll.insert_at_end(7)
+ll.insert_at_end(8)
+ll.insert_at_end(10)
+ll.display()
+
+# Menghapus node dengan nilai tertentu.
+ll.delete_node(10)
+ll.display()
+
+
+
+#  Latihan	3:  Implementasikan Pencarian pada node tertentu Double Linked List.
+class NodeDouble:
     def __init__(self, data):
         self.data = data
         self.next = None
         self.prev = None
 
-class DoublyLinkedList:
+class DoubleLinkedList:
     def __init__(self):
         self.head = None
         self.tail = None
     
     def insert_at_end(self, data):
-        new_node = Node(data)
+        new_node = NodeDouble(data)
         if not self.head:
             self.head = new_node
             self.tail = new_node
@@ -18,66 +92,20 @@ class DoublyLinkedList:
             self.tail.next = new_node
             new_node.prev = self.tail
             self.tail = new_node
+        print(f"Data {data} berhasil ditambahkan!")
     
-    def display_forward(self):
+    def display(self):
         if not self.head:
             print("\nList kosong!")
             return
-        print("\nTraversing forward:")
+        print("\nIsi Double Linked List:")
         temp = self.head
         while temp:
             print(temp.data, end=" -> ")
             temp = temp.next
         print("null")
-    
-    def display_backward(self):
-        if not self.tail:
-            print("\nList kosong!")
-            return
-        print("\nTraversing backward:")
-        temp = self.tail
-        while temp:
-            print(temp.data, end=" -> ")
-            temp = temp.prev
-        print("null")
 
-    def delete_node(self, key):
-        temp = self.head
-        
-        # Jika list kosong
-        if not temp:
-            print("List kosong! Tidak ada yang bisa dihapus.")
-            return
-        
-        # Jika node pertama yang akan dihapus
-        if temp and temp.data == key:
-            self.head = temp.next
-            if self.head:
-                self.head.prev = None
-            else:
-                self.tail = None
-            print(f"Data {key} berhasil dihapus!")
-            return
-        
-        # Cari node yang akan dihapus
-        while temp and temp.data != key:
-            temp = temp.next
-        
-        # Jika tidak ditemukan
-        if temp is None:
-            print(f"Data {key} tidak ditemukan!")
-            return
-        
-        # Update pointer
-        if temp.prev:
-            temp.prev.next = temp.next
-        if temp.next:
-            temp.next.prev = temp.prev
-        else:
-            self.tail = temp.prev
-        
-        print(f"Data {key} berhasil dihapus!")
-
+    # Fungsi Cari Node Tertentu
     def search_node(self, key):
         temp = self.head
         position = 1
@@ -87,79 +115,76 @@ class DoublyLinkedList:
             temp = temp.next
             position += 1
         return f"Data {key} tidak ditemukan!"
-      
-    def reverse_node(self):
+    
+ll = DoubleLinkedList()
+ll.insert_at_end(6)
+ll.insert_at_end(3)
+ll.insert_at_end(8)
+ll.insert_at_end(18)
+ll.insert_at_end(20)
+ll.display()
+# Pencarian pada node tertentu Double Linked List.
+print(ll.search_node(8))
+print(ll.search_node(17))
+
+
+# Latihan	5:  Tambahkan metode untuk membalik (reverse) sebuah single linked list tanpa membuat linked baru.
+
+class NodeSingle:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class SingleLinkedList:
+    def __init__(self):
+        self.head = None
+    
+    def insert_at_end(self, data):
+        new_node = NodeSingle(data)
+        if not self.head:
+            self.head = new_node
+            return
+        temp = self.head
+        while temp.next:
+            temp = temp.next
+        temp.next = new_node
+        print(f"Data {data} berhasil ditambahkan!")
+    
+    def display(self):
+        if not self.head:
+            print("\nList kosong!")
+            return
+        print("\nIsi Single linked list:")
+        temp = self.head
+        while temp:
+            print(temp.data, end=" -> ")
+            temp = temp.next
+        print("null")
+        
+    # Fungsi reverse single linked list
+    def reverse_list(self):
         if not self.head:
             print("List kosong!")
             return
         
-        temp = None
+        prev = None
         current = self.head
-        self.tail = self.head
         
-        while current:
-            temp = current.prev
-            current.prev = current.next
-            current.next = temp
-            current = current.prev
+        while current is not None:
+            next_node = current.next  
+            current.next = prev       
+            prev = current            
+            current = next_node       
         
-        if temp:
-            self.head = temp.prev
-        
+        self.head = prev
         print("List berhasil dibalik!")
 
-def main():
-    ll = DoublyLinkedList()
-    
-    while True:
-        print("\n" + "="*50)
-        print("       PROGRAM DOUBLY LINKED LIST")
-        print("="*50)
-        print("1. Masukkan Data")
-        print("2. Hapus Data")
-        print("3. Cari Data")
-        print("4. Tampilkan Data (Forward)")
-        print("5. Tampilkan Data (Backward)")
-        print("6. Balik Urutan Data")
-        print("7. Keluar")
-        print("="*50)
-
-        try:
-            pilihan = int(input("Pilih menu (1-7): "))
-            
-            if pilihan == 1:
-                masuk = int(input("Masukkan angka: "))
-                ll.insert_at_end(masuk)
-                print(f"Data {masuk} berhasil ditambahkan!")
-                
-            elif pilihan == 2:
-                hapus = int(input("Masukkan angka yang akan dihapus: "))
-                ll.delete_node(hapus)
-                
-            elif pilihan == 3:
-                cari = int(input("Masukkan angka yang dicari: "))
-                result = ll.search_node(cari)
-                print(result)
-                
-            elif pilihan == 4:
-                ll.display_forward()
-                
-            elif pilihan == 5:
-                ll.display_backward()
-                
-            elif pilihan == 6:
-                ll.reverse_node()
-                
-            elif pilihan == 7:
-                print("\n" + "="*50)
-                print("                     KELUAR           ")
-                print("="*50)
-                break
-                
-            else:
-                print("Pilihan tidak valid! Silakan pilih 1-7.")
-                
-        except ValueError:
-            print("Input tidak valid! Masukkan angka saja.")
-
-main()
+ll = SingleLinkedList()
+ll.insert_at_end(7)
+ll.insert_at_end(2)
+ll.insert_at_end(3)
+ll.insert_at_end(9)
+ll.insert_at_end(67)
+ll.display()
+ll.reverse_list()
+ll.display()
