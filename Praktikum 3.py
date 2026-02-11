@@ -1,4 +1,4 @@
-# Latihan	1: Implementasikan fungsi untuk menghapus node dengan nilai tertentu.
+# Latihan	1: Implementasikan fungsi untuk menghapus node dengan nilai tertentu. 
 
 class NodeSingle:
     def __init__(self, data):
