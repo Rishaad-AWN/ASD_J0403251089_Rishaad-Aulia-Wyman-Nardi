@@ -123,7 +123,7 @@ ll.insert_at_end(8)
 ll.insert_at_end(18)
 ll.insert_at_end(20)
 ll.display()
-# Pencarian pada node tertentu Double Linked List.
+# Pencarian node tertentu pada Double Linked List.
 print(ll.search_node(8))
 print(ll.search_node(17))
 
