@@ -30,11 +30,11 @@ countdown(3)
 #
 # Urutan eksekusi:
 #   countdown(3) -> Masuk: 3
-#     countdown(2) -> Masuk: 2
-#       countdown(1) -> Masuk: 1
-#         countdown(0) -> Selesai (base case, langsung return)
-#       kembali ke countdown(1) -> Keluar: 1
-#     kembali ke countdown(2) -> Keluar: 2
+#   countdown(2) -> Masuk: 2
+#   countdown(1) -> Masuk: 1
+#   countdown(0) -> Selesai (base case, langsung return)
+#   kembali ke countdown(1) -> Keluar: 1
+#   kembali ke countdown(2) -> Keluar: 2
 #   kembali ke countdown(3) -> Keluar: 3
 #
 # Hasilnya "Keluar" muncul dari 1, 2, 3 (terbalik dari urutan masuk)
