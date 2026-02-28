@@ -26,10 +26,10 @@ def pangkat(a, n):
 
 print(pangkat(2, 4))  # Output: 16
 
-# ----------------------------------------------------------
+# -----------------------------------------------------------
 # Diskusi:
 # - Base case: n == 0, mengembalikan 1 agar rekursi berhenti
 # - Recursive case: a * pangkat(a, n-1), setiap pemanggilan n berkurang 1
 # - Alur call stack: pangkat(2,4) -> pangkat(2,3) -> pangkat(2,2)
 #   -> pangkat(2,1) -> pangkat(2,0) -> mulai kembali (unwinding)
-# ----------------------------------------------------------
+# -----------------------------------------------------------
