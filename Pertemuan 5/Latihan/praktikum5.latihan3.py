@@ -33,12 +33,12 @@ print("Nilai maksimum:", cari_maks(angka))
 # - Recursive case: bandingkan data[index] dengan hasil rekursi sisa list
 # - Alur: cari_maks([3,7,2,9,5], 0)
 #     -> maks_sisa = cari_maks([3,7,2,9,5], 1)
-#         -> maks_sisa = cari_maks([3,7,2,9,5], 2)
-#             -> maks_sisa = cari_maks([3,7,2,9,5], 3)
-#                 -> maks_sisa = cari_maks([3,7,2,9,5], 4) = 5 (base case)
-#                 -> 9 > 5? Ya -> return 9
-#             -> 2 > 9? Tidak -> return 9
-#         -> 7 > 9? Tidak -> return 9
+#     -> maks_sisa = cari_maks([3,7,2,9,5], 2)
+#     -> maks_sisa = cari_maks([3,7,2,9,5], 3)
+#     -> maks_sisa = cari_maks([3,7,2,9,5], 4) = 5 (base case)
+#     -> 9 > 5? Ya -> return 9
+#     -> 2 > 9? Tidak -> return 9
+#     -> 7 > 9? Tidak -> return 9
 #     -> 3 > 9? Tidak -> return 9
 # - Hasil akhir: 9
 # ----------------------------------------------------------
