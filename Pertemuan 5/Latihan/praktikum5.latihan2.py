@@ -24,7 +24,7 @@ countdown(3)
 # ----------------------------------------------------------
 # Diskusi: Mengapa output 'Keluar' muncul terbalik?
 #
-# Karena print("Keluar:", n) berada SETELAH pemanggilan rekursif.
+# Karena print("Keluar:", n) berada setelah pemanggilan rekursif.
 # Fungsi tidak akan mencetak "Keluar" sampai semua rekursi di bawahnya
 # selesai dieksekusi terlebih dahulu.
 #

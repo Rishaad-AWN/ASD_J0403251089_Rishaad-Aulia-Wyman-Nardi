@@ -1,8 +1,8 @@
-#======================================================
-# Nama  : Rishaad Aulia Wyman Nardi
-# NIM   : J0403251089
-# Kelas : B2
-#======================================================
+# ================================================
+# NAMA : Rishaad Aulia Wyman Nardi
+# NIM  : J0403251089
+# Kelas: B2
+# ================================================
 
 # Studi Kaus : Sistem Antrian   Layanan Akademik
 #Implementasi Queue =>
@@ -99,7 +99,8 @@ def main():
       
     elif pilihan == "2":
       dilayani = q.dequeue()
-      print(f"Mahasiswa Dilayani  : {dilayani.nim} - {dilayani.nama}")
+      if dilayani is not None:
+        print(f"Mahasiswa Dilayani  : {dilayani.nim} - {dilayani.nama}")
     
     elif pilihan == "3":
       q.tampilkan()
