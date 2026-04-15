@@ -1,4 +1,10 @@
 #=====================================================================
+# Nama : Rishaad Aulia Wyman Nardi
+# NIM  : J0403251089
+# Kelas : B2
+#=====================================================================
+
+#=====================================================================
 # Materi 5 : Membuat Traversal Postorder
 #=====================================================================
 
@@ -31,3 +37,9 @@ root.left.right = Node("E")
 # Menjalankan traversal postorder
 print("Hasil Traversal Postorder : ", end="")
 postorder(root)
+
+# Penjelasan :
+# Fungsi postorder melakukan traversal dengan urutan: kiri -> kanan -> root.
+# Menggunakan rekursi untuk mengunjungi semua node.
+# Tree dibuat dengan root "A" dan beberapa child.
+# Output menampilkan urutan node sesuai postorder.
