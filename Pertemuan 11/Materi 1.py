@@ -1,4 +1,10 @@
+#===========================================================
+# Nama  : Rishaad Aulia Wyman Nardi
+# NIM   : J0403251089
+# Kelas : B2
+#===========================================================
 # Implementasi Dasar Graph
+#===========================================================
 
 graph = {
   "A" : ["B", "C"],
@@ -7,15 +13,7 @@ graph = {
   "D" : ["B", "C"]
 }
 
-# periksa semua node yang ada di dalam graph
+# Mengambil setiap key dalam dictionary (mengunjungi semua node satu per satu)
 for node in graph:
-    # tampilkan node saat ini
-    print("Node", node, "terhubung dengan tetangga:", end=" ")
-    
-    # periksa semua tetangga dari node saat ini
-    for neighbor in graph[node]:
-        # tampilkan tetangga tersebut
-        print(neighbor, end=" ")
-    
-    # buat baris baru untuk node berikutnya
-    print()
+    # Menampilkan node dan daftar tetangganya (value)
+    print(node, "->", graph[node])
