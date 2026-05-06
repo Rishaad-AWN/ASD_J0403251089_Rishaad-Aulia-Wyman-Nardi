@@ -53,7 +53,7 @@ for lokasi, jarak in hasil.items():
 #
 # 2. Berapa waktu tempuh terpendek dari Gerbang ke Aula?
 #    Waktu tempuh terpendek ke Aula = 7 menit.
-#    Jalurnya: Gerbang->Kantin->Lab->Aula = 2+4+1 = 7 menit.
+#    Jalur : Gerbang->Kantin->Lab->Aula = 2+4+1 = 7 menit.
 #    (Lebih cepat dari Gerbang->Kantin->Aula = 2+7 = 9 menit, atau
 #     Gerbang->Perpustakaan->Lab->Aula = 6+3+1 = 10 menit)
 #
